@@ -216,6 +216,9 @@ set -e
 # ### Finalize
 #
 
+puts-step "Updating database"
+alembic upgrade head | indent
+
 # Store new artifacts in cache.
 for dir in $CACHED_DIRS; do
 
